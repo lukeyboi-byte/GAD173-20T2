@@ -1,20 +1,20 @@
 ﻿  Source.cpp
-C:\Users\Luke\Documents\UNI\GAD173 20T2\Breakout clone\GAD173-20T2\Breakout clone\Breakout clone\BreakoutMain.h(21,9): warning C4244: 'initializing': conversion from 'T' to 'int', possible loss of data
+C:\Users\Luke\Documents\UNI\GAD173 20T2\Breakout clone\GAD173-20T2\Breakout clone\Breakout clone\BreakoutMain.h(30,9): warning C4244: 'initializing': conversion from 'T' to 'int', possible loss of data
           with
           [
               T=float
           ]
-C:\Users\Luke\Documents\UNI\GAD173 20T2\Breakout clone\GAD173-20T2\Breakout clone\Breakout clone\Source.cpp(38,35): warning C4244: 'argument': conversion from 'float' to 'unsigned int', possible loss of data
-C:\Users\Luke\Documents\UNI\GAD173 20T2\Breakout clone\GAD173-20T2\Breakout clone\Breakout clone\Source.cpp(38,22): warning C4244: 'argument': conversion from 'float' to 'unsigned int', possible loss of data
-C:\Users\Luke\Documents\UNI\GAD173 20T2\Breakout clone\GAD173-20T2\Breakout clone\Breakout clone\Source.cpp(43,12): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
-C:\Users\Luke\Documents\UNI\GAD173 20T2\Breakout clone\GAD173-20T2\Breakout clone\Breakout clone\Source.cpp(51,37): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
-C:\Users\Luke\Documents\UNI\GAD173 20T2\Breakout clone\GAD173-20T2\Breakout clone\Breakout clone\Source.cpp(57,37): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+C:\Users\Luke\Documents\UNI\GAD173 20T2\Breakout clone\GAD173-20T2\Breakout clone\Breakout clone\Source.cpp(46,35): warning C4244: 'argument': conversion from 'float' to 'unsigned int', possible loss of data
+C:\Users\Luke\Documents\UNI\GAD173 20T2\Breakout clone\GAD173-20T2\Breakout clone\Breakout clone\Source.cpp(46,22): warning C4244: 'argument': conversion from 'float' to 'unsigned int', possible loss of data
+C:\Users\Luke\Documents\UNI\GAD173 20T2\Breakout clone\GAD173-20T2\Breakout clone\Breakout clone\Source.cpp(51,12): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
 C:\Users\Luke\Documents\UNI\GAD173 20T2\Breakout clone\GAD173-20T2\Breakout clone\Breakout clone\Source.cpp(63,37): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
-C:\Users\Luke\Documents\UNI\GAD173 20T2\Breakout clone\GAD173-20T2\Breakout clone\Breakout clone\Source.cpp(97,31): warning C4244: '=': conversion from 'int' to 'T', possible loss of data
+C:\Users\Luke\Documents\UNI\GAD173 20T2\Breakout clone\GAD173-20T2\Breakout clone\Breakout clone\Source.cpp(69,37): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+C:\Users\Luke\Documents\UNI\GAD173 20T2\Breakout clone\GAD173-20T2\Breakout clone\Breakout clone\Source.cpp(75,37): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+C:\Users\Luke\Documents\UNI\GAD173 20T2\Breakout clone\GAD173-20T2\Breakout clone\Breakout clone\Source.cpp(109,31): warning C4244: '=': conversion from 'int' to 'T', possible loss of data
           with
           [
               T=float
           ]
-C:\Users\Luke\Documents\UNI\GAD173 20T2\Breakout clone\GAD173-20T2\Breakout clone\Breakout clone\Source.cpp(144,21): warning C4018: '<': signed/unsigned mismatch
-C:\Users\Luke\Documents\UNI\GAD173 20T2\Breakout clone\GAD173-20T2\Breakout clone\Breakout clone\Source.cpp(174,21): warning C4018: '<': signed/unsigned mismatch
+C:\Users\Luke\Documents\UNI\GAD173 20T2\Breakout clone\GAD173-20T2\Breakout clone\Breakout clone\Source.cpp(157,21): warning C4018: '<': signed/unsigned mismatch
+C:\Users\Luke\Documents\UNI\GAD173 20T2\Breakout clone\GAD173-20T2\Breakout clone\Breakout clone\Source.cpp(218,21): warning C4018: '<': signed/unsigned mismatch
   Breakout clone.vcxproj -> C:\Users\Luke\Documents\UNI\GAD173 20T2\Breakout clone\GAD173-20T2\Breakout clone\Debug\Breakout clone.exe

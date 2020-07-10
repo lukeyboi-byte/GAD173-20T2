@@ -1,6 +1,7 @@
 #include "BreakoutMain.h"
 #include <conio.h>
 
+int brickDestroyedCount = 0;
 
 int main()
 {
@@ -17,6 +18,12 @@ Brick brick;
 //vector is like a combination of an array and list
 std::vector<Brick> Bricks(31, Brick(brick));
 
+///setting a void for destroyed brick
+/*void::Brick::setDestroyed(bool destr)
+{
+	destroyed = destr;
+}*/
+
 bool Game::Start() //Setup our game
 {
 	//load sound buffers!
@@ -24,6 +31,7 @@ bool Game::Start() //Setup our game
 	wallSB.loadFromFile("SFX/wallbounce.wav");
 	brickSB.loadFromFile("SFX/blockbounce.wav");
 
+	//Text for lives and score
 	font.loadFromFile("arial.ttf");
 	scoreText.setFont(font);
 	livesText.setFont(font);
@@ -41,8 +49,12 @@ bool Game::Start() //Setup our game
 
 	//setup bricks
 	srand(time(NULL));
+	
 	for (int i = 0; i < 31; i++)
 	{
+		/* My change to fix the bricks
+		Bricks[i].setDestroyed(false);
+		*/
 		Bricks[i].bShape.setSize(sf::Vector2f(100, 50));
 		//bottom row
 		if (i <= 10)
@@ -62,7 +74,7 @@ bool Game::Start() //Setup our game
 			Bricks[i].bShape.setFillColor(sf::Color(0, 0, rand() % 35 + 180, 255));
 			Bricks[i].bShape.setPosition(100 * (i - 11), 50);
 		}
-
+		
 	}
 
 	//setup borders
@@ -94,7 +106,7 @@ int Game::Update()
 	ball.ballShape.setRadius(ball.ballRadius);
 	ball.ballShape.setPosition(paddle.pShape.getPosition().x, paddle.pShape.getPosition().y - 75);
 	ball.ballShape.setFillColor(sf::Color::Magenta);
-	ball.ballVelocity.x = rand() % 10;
+	ball.ballVelocity.x = rand() % 7;
 	ball.ballVelocity.y = -5;
 
 	//Code to run whilst window is open
@@ -108,6 +120,7 @@ int Game::Update()
 
 		//move ball
 		ball.ballShape.move(ball.ballVelocity);
+
 
 		if (top.getGlobalBounds().intersects(ball.ballShape.getGlobalBounds()))
 		{
@@ -126,7 +139,7 @@ int Game::Update()
 				return 1;
 			}
 		}
-
+		
 		if (left.getGlobalBounds().intersects(ball.ballShape.getGlobalBounds()) || right.getGlobalBounds().intersects(ball.ballShape.getGlobalBounds()))
 		{
 			ball.Bounce(1, left, ball.ballShape);
@@ -146,13 +159,42 @@ int Game::Update()
 			if(Bricks[i].bShape.getGlobalBounds().intersects(ball.ballShape.getGlobalBounds()))
 			{
 				ball.Bounce(0, Bricks[i].bShape, ball.ballShape);
+				//this below we are just moving the brick as opposed to deleting it
 				Bricks[i].bShape.setPosition(1200, 0);
-				score += 1;
-				ball.ballVelocity = ball.ballVelocity * 1.03f;
-				if (score == 30)
+				/// My change to fix the bricks
+				/*Bricks[i].setDestroyed(true);
+				brick.isDestroyed();
+				*/
+				brickDestroyedCount++;
+				if (lives == 3)
 				{
-					return 1;
+					score += 20;
 				}
+
+				else if(lives == 2)
+				{
+					score += 15;
+				}
+
+				else if(lives == 1)
+				{
+					score += 10;
+				}
+
+				ball.ballVelocity = ball.ballVelocity * 1.01f;
+
+				//changed below to new bricks.size variable to change scoring systems 
+			    //and be able to add new levels with different block amounts
+
+				/////////////////////////////////////needs change to bricks = 0 not score
+				if (brickDestroyedCount == 31)
+				{
+					//You win!
+					return 1;
+					
+				}
+				////////////////////////
+
 				sound.setBuffer(brickSB);
 				sound.play();
 			}
@@ -167,8 +209,10 @@ int Game::Update()
 				window.close();
 		}
 
+		//text what does it say?
 		scoreText.setString("Score: " + std::to_string(score));
 		livesText.setString("Lives: " + std::to_string(lives));
+
 		//Clear our window, and redraw everything
 		window.clear();
 		for (int i = 0; i < Bricks.size(); i++)

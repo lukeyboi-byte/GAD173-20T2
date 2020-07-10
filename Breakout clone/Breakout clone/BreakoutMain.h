@@ -5,11 +5,20 @@
 
 class Brick
 {
+/*private:
+	bool destroyed = false;
+	*/
 public:
 	sf::RectangleShape bShape;
 	sf::Color bColour;
 	sf::Vector2f bSize;
 	sf::Vector2f bPos;
+	/*bool isDestroyed()
+	{
+		return destroyed;
+	}
+	void setDestroyed(bool);
+	*/
 };
 
 class Ball
