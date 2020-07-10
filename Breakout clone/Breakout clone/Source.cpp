@@ -186,7 +186,7 @@ int Game::Update()
 				//changed below to new bricks.size variable to change scoring systems 
 			    //and be able to add new levels with different block amounts
 
-				/////////////////////////////////////needs change to bricks = 0 not score
+				/////////////////////////////////////
 				if (brickDestroyedCount == 31)
 				{
 					//You win!
